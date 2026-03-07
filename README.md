@@ -1,4 +1,4 @@
-#Compilador 
+# Compilador 
 
 Proyecto de **Seminario de Traductores** que implementa un mini compilador para un lenguaje tipo C. El compilador realiza:
 

@@ -163,20 +163,12 @@ Además se generan/actualizan los archivos:
 Puedes modificar cualquiera de estos archivos o crear nuevos, mientras respetes la sintaxis del lenguaje (tokens separados por espacios y construcciones soportadas por `compilador.lr`).
 
 ---
-
-## Notas y extensiones posibles
-
-- Actualmente el lenguaje soporta:
-	- Tipos básicos `int` y `float` (aunque el backend genera `DWORD`).
-	- Funciones, parámetros y variables locales.
-	- Operadores aritméticos `+`, `-`, `*`, `/`.
-	- Operadores relacionales y lógicos según definidos en [analisisLexico.py](analisisLexico.py) y [analisisLexico2.py](analisisLexico2.py).
-	- Estructuras básicas como `return` y bloques `{ ... }`.
-
-- Posibles extensiones:
-	- Soporte de más tipos de datos.
-	- Nuevas sentencias (condicionales `if/else`, ciclos `while` completos, etc.).
-	- Más operadores y funciones de biblioteca.
-	- Backend alternativo (por ejemplo, generación de código intermedio o para otra arquitectura).
-
-Este README resume la intención docente del proyecto: mostrar, de punta a punta, cómo se conecta un analizador léxico, uno sintáctico LR, un árbol sintáctico, un analizador semántico y un generador de código en un compilador sencillo.
+<div align="center">
+	<b>✨ OCHOA ORTEGA ANDREA J.</b><br>
+	<br>
+	<sub>Computación Tolerante a Fallas D06.</sub><br>
+	<br>
+	<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"/>
+	<br>
+	<i>“Lo que esta bien hecho no se va a romper.”</i>
+</div>

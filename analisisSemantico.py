@@ -1,4 +1,6 @@
 from io import open
+from colores import HEADER, SUBHEADER, ERROR, RESET
+
 
 class Simbolo:
 
@@ -206,8 +208,9 @@ class Semantico:
                             self.variableAsignacion = ""
 
                 if i.id == 2 :
-                    i.nodo.sangria = self.sangriaActual
-                    i.nodo.printRegla()
+                    # Ya mostramos el árbol sintáctico de forma gráfica en el analizador
+                    # sintáctico; aquí solo recorremos el árbol en silencio para generar
+                    # código y hacer las verificaciones semánticas.
                     self.analiza(i.nodo,archivo)
 
                 contador+=1
@@ -307,13 +310,13 @@ class Semantico:
                 return i
 
     def muestraSimbolos(self):
-        print("+++++++++TABLA DE SIMBOLOS+++++++++\n")
+        print(f"{HEADER}----- TABLA DE SÍMBOLOS -----{RESET}\n")
         for i in self.tablaSimbolos:
             i.printSimbolo()
 
     def muestraErrores(self):
-        print("\n\n+++++++++ANÁLIZADOR SEMÁNTICO+++++++++")
+        print(f"\n\n{SUBHEADER}----- ANÁLISIS SEMÁNTICO -----{RESET}")
         if len(self.listaErrores) == 0:
-            print("No se detecto ningun error")
+            print("No se detectó ningún error")
    
         print("\n\n")

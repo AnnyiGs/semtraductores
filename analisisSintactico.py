@@ -6,6 +6,7 @@ from pila import stack
 import arbolSintactico
 import elementoPila
 import analisisSemantico
+from colores import HEADER, SUBHEADER, ERROR, RESET
 
 class sintactico:
 
@@ -42,7 +43,7 @@ class sintactico:
                         break
 
                     else:
-                        print("Entrada: "+entradaDividida[cont]+"  Accion: "+str(valor))
+                        print(f"Entrada: {entradaDividida[cont]}  Acción: {valor}")
                         terminal = elementoPila.terminal(entradaDividida[cont])
                         estado = elementoPila.estado(str(valor))
                         self.pila.push(terminal)
@@ -54,7 +55,7 @@ class sintactico:
                         break
 
                     else:
-                        print("Entrada: "+entradaDividida[cont]+"  Accion: "+str(valor))
+                        print(f"Entrada: {entradaDividida[cont]}  Acción: {valor}")
                         terminal = elementoPila.terminal(entradaDividida[cont])
                         estado = elementoPila.estado(str(valor))
                         self.pila.push(terminal)
@@ -67,14 +68,14 @@ class sintactico:
                 if valor == 0:
                     break
                 elif valor == -1:
-                    print("Entrada: "+entrada+ " Aceptada")
+                    print(f"{SUBHEADER}Entrada: {entrada}  ACEPTADA{RESET}")
                     valida = True
 
                 elif valor < 0:
                     for i in range(6):
                         self.pila.pop()
 
-                    print("Entrada: "+entradaDividida[cont]+"  Accion: "+str(valor))
+                    print(f"Entrada: {entradaDividida[cont]}  Acción: {valor}")
                     noTerminal = elementoPila.noTerminal("E")
                     estado = elementoPila.estado(str(abs(valor+1)))
                     self.pila.push(noTerminal)
@@ -104,7 +105,7 @@ class sintactico:
                     valor = tabla_2[1][int(self.pila.top().returnValor())]
 
                 if valor > 0:
-                    print("Entrada: "+entradaDividida[cont]+"  Accion: "+str(valor))
+                    print(f"Entrada: {entradaDividida[cont]}  Acción: {valor}")
                     terminal = elementoPila.terminal(entradaDividida[cont])
                     estado = elementoPila.estado(str(valor))
                     self.pila.push(terminal)
@@ -113,11 +114,11 @@ class sintactico:
 
                 elif valor < 0:
                     if valor == -1:
-                        print("Entrada: "+entrada+ " Aceptada")
+                        print(f"{SUBHEADER}Entrada: {entrada}  ACEPTADA{RESET}")
                         valida = True
                         
                     elif valor == -3:
-                        print("Entrada: "+entradaDividida[cont]+"  Accion: "+str(valor))
+                        print(f"Entrada: {entradaDividida[cont]}  Acción: {valor}")
                         for i in range(2):
                             self.pila.pop()
 
@@ -128,7 +129,7 @@ class sintactico:
                         self.pila.push(estado)
                             
                     elif valor == -2:
-                        print("Entrada: "+entradaDividida[cont]+"  Accion: "+str(valor))
+                        print(f"Entrada: {entradaDividida[cont]}  Acción: {valor}")
                         for i in range(6):
                             self.pila.pop()
 
@@ -139,12 +140,12 @@ class sintactico:
                         self.pila.push(estado)
 
                 elif valor == 0:
-                    print("Entrada No Valida")
+                    print(f"{ERROR}Entrada no válida{RESET}")
                     break
             else:
                 valor = tabla_2[2][int(self.pila.top().returnValor())]   
                 if valor > 0:
-                    print("Entrada: "+entradaDividida[cont]+"  Accion: "+str(valor))
+                    print(f"Entrada: {entradaDividida[cont]}  Acción: {valor}")
                     terminal = elementoPila.terminal(entradaDividida[cont])
                     estado = elementoPila.estado(str(valor))
                     self.pila.push(terminal)
@@ -153,11 +154,11 @@ class sintactico:
 
                 elif valor < 0:
                     if valor == -1:
-                        print("Entrada: "+entrada+ " Aceptada")
+                        print(f"{SUBHEADER}Entrada: {entrada}  ACEPTADA{RESET}")
                         valida = True
                         
                     elif valor == -3:
-                        print("Entrada: "+entradaDividida[cont]+"  Accion: "+str(valor))
+                        print(f"Entrada: {entradaDividida[cont]}  Acción: {valor}")
                         for i in range(2):
                             self.pila.pop()
 
@@ -168,7 +169,7 @@ class sintactico:
                         self.pila.push(estado)
                             
                     elif valor == -2:
-                        print("Entrada: "+entradaDividida[cont]+"  Accion: "+str(valor))
+                        print(f"Entrada: {entradaDividida[cont]}  Acción: {valor}")
                         for i in range(6):
                             self.pila.pop()
 
@@ -178,7 +179,7 @@ class sintactico:
                         self.pila.push(noTerminal)
                         self.pila.push(estado)
                 elif valor == 0:
-                    print("Entrada No Valida")
+                    print(f"{ERROR}Entrada no válida{RESET}")
                     break
                 
     def readFile(self):
@@ -230,8 +231,8 @@ class sintactico:
             valorTabla = int(self.matrizGramatica[topePila][valor])
                 
             if valorTabla == 0:
-                print("\n\n+++++++++ANÁLIZADOR SEMÁNTICO+++++++++")
-                print("Se encontro un error\n\n")
+                print(f"\n\n{ERROR}----- ANÁLISIS SEMÁNTICO -----{RESET}")
+                print(f"{ERROR}Se encontró un error{RESET}\n")
                 break
 
             elif valorTabla > 0:
@@ -244,12 +245,27 @@ class sintactico:
             elif valorTabla < 0:
                 if valorTabla == -1:
                     valida = True
-                    print("\n\n+++++++++ÀRBOL SINTÁCTICO+++++++++\n")
+                    print(f"\n\n{HEADER}----- ÁRBOL SINTÁCTICO -----{RESET}\n")
                     arbolFinal = arbolSintactico.arbolSintactico()
                     analizadorSem = analisisSemantico.Semantico()
                     self.pila.pop()
                     elemento = self.pila.pop()
-                    elemento.nodo.printRegla()
+                    # Imprimir en consola
+                    arbolFinal.imprimirArbolGrafico(elemento.nodo)
+
+                    # Guardar árbol en archivo de texto y abrirlo en una ventana aparte
+                    try:
+                        ruta_archivo_arbol = "arbol_sintactico.txt"
+                        with open(ruta_archivo_arbol, "w", encoding="utf-8") as f_arbol:
+                            f_arbol.write("ARBOL SINTACTICO\n\n")
+                            arbolFinal.escribirArbolGrafico(elemento.nodo, f_arbol)
+
+                        try:
+                            os.startfile(ruta_archivo_arbol)
+                        except Exception:
+                            pass
+                    except Exception:
+                        pass
                     analizadorSem.crearArchivo()
                     file = open('CodigoTraducido.asm','a+')
                     analizadorSem.analiza(elemento.nodo,file)

@@ -1,0 +1,12 @@
+int identidad ( int n ) {
+    int tmp ;
+    tmp = n ;
+    return tmp ;
+}
+
+int main ( ) {
+    int a ;
+    int b ;
+    a = 10 ;
+    b = identidad ( a ) ;
+}

@@ -1,3 +1,5 @@
+from colores import SUBHEADER, RESET
+
 
 def AnalisisLexico(test):
     identificador = {'a' : 'id', 
@@ -47,7 +49,8 @@ def AnalisisLexico(test):
  
     cadena=""
 
-    print("\n+++++++++ANÁLISIS LÉXICO+++++++++\n\n-TOKEN-\t\t-SÍMBOLO-\t\t-TIPO-")
+    print(f"\n{SUBHEADER}----- ANÁLISIS LÉXICO -----{RESET}\n")
+    print("TOKEN\t\tSÍMBOLO\t\tTIPO")
     for line in test:
         cont = cont + 1
         tokens = line.split(' ')

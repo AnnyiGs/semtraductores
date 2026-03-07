@@ -10,7 +10,7 @@ file = open("test.txt")  # cambiar el nombre del archivo de prueba
 test = file.read()
 
 
-print(f"\n{HEADER}---------- EJEMPLO DE CÓDIGO ----------{RESET}\n\n{test}")
+print(f"\n{HEADER}--------------- CÓDIGO ---------------{RESET}\n\n{test}")
 
 
 lexicoAux = AnalisisLexico(test)

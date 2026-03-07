@@ -1,5 +1,5 @@
 from io import open
-from colores import HEADER, SUBHEADER, ERROR, RESET
+from utils.colores import HEADER, SUBHEADER, ERROR, RESET
 
 
 class Simbolo:

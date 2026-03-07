@@ -1,7 +1,7 @@
-import elementoPila
+from sintactico import elementoPila
+
 
 class stack:
-
     def __init__(self):       
         self.stack = []
 

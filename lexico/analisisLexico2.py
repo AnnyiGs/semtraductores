@@ -144,4 +144,4 @@ class analizador:
 
                     estado = 4
         return estado
- 
+  

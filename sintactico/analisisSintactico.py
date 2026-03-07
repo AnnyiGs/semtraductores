@@ -1,12 +1,12 @@
 from io import open
 import os
 import subprocess
-from analisisLexico2 import analizador
-from pila import stack
-import arbolSintactico
-import elementoPila
-import analisisSemantico
-from colores import HEADER, SUBHEADER, ERROR, RESET
+from lexico.analisisLexico2 import analizador
+from sintactico.pila import stack
+import sintactico.arbolSintactico as arbolSintactico
+import sintactico.elementoPila as elementoPila
+import semantico.analisisSemantico as analisisSemantico
+from utils.colores import HEADER, SUBHEADER, ERROR, RESET
 
 class sintactico:
 

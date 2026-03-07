@@ -1,7 +1,13 @@
-from colores import SUBHEADER, RESET
+from utils.colores import SUBHEADER, RESET
 
 
 def AnalisisLexico(test):
+    """Realiza un análisis léxico sencillo sobre el código fuente.
+
+    Imprime una tabla con TOKEN / SÍMBOLO / TIPO y regresa una
+    cadena con los tokens separados por espacios, que será la
+    entrada para el analizador sintáctico LR.
+    """
     identificador = {'a' : 'id', 
                      'b':'id', 
                      'c':'id', 
@@ -44,11 +50,12 @@ def AnalisisLexico(test):
     palabras_reservadas_keys = palabras_reservadas.keys()
 
     cont = 0
-    band=0
+    band = 0
     test = test.split("\n")
  
     cadena=""
 
+    # Encabezado del análisis léxico en formato de tabla.
     print(f"\n{SUBHEADER}-------- ANÁLISIS LÉXICO --------{RESET}")
     encabezado = f"{'TOKEN':<12} {'SÍMBOLO':<16} {'TIPO':<5}"
     print(encabezado)

@@ -1,7 +1,7 @@
-import arbolSintactico
+from sintactico import arbolSintactico
+
 
 class elementoPila:
-
     def __init__(self,v,rNombre,id):
 
         self.valor = v

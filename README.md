@@ -66,6 +66,10 @@ Además se generan/actualizan los archivos:
 		- Números enteros y reales
 	- Imprime una **tabla** alineada con columnas `TOKEN`, `SÍMBOLO`, `TIPO`.
 	- Devuelve una cadena de tokens separada por espacios que se usa como entrada del parser.
+	
+	**Ejemplo de salida del análisis léxico**
+
+	![Salida de análisis léxico](zimagenes/analisislexico.png)
 
 - [analisisLexico2.py](analisisLexico2.py)
 	- Clase `analizador`.
@@ -98,6 +102,10 @@ Además se generan/actualizan los archivos:
 		- `imprimirArbol`: recorrido original (ya no se usa directamente en la salida principal).
 		- `imprimirArbolGrafico(nodo, prefijo, esUltimo)`: imprime el árbol con ramas ASCII (`├──`, `└──`, `│`).
 		- `escribirArbolGrafico(nodo, archivo, ...)`: misma idea pero escribiendo en un archivo de texto.
+	
+	**Ejemplo de árbol sintáctico en archivo de texto**
+
+	![Árbol sintáctico en texto](zimagenes/arboltxt.png)
 
 - [elementoPila.py](elementoPila.py)
 	- Clase base `elementoPila` y derivadas `terminal`, `noTerminal`, `estado`.
@@ -132,6 +140,10 @@ Además se generan/actualizan los archivos:
 		- `muestraSimbolos()`: imprime la **tabla de símbolos** como una tabla alineada:
 			- Columnas: `IDENTIFICADOR`, `TIPO`, `TIPO DATO`, `ÁMBITO`.
 		- `muestraErrores()`: lista de errores semánticos encontrados (o mensaje de que no hubo errores).
+	
+	**Ejemplo de tabla de símbolos**
+
+	![Tabla de símbolos](zimagenes/tablasimbolos.png)
 
 - [colores.py](colores.py)
 	- Constantes ANSI para colores en consola:

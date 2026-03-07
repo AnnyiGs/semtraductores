@@ -9,7 +9,7 @@ from colores import HEADER, RESET
 analizador = sintactico()
 file = open("test.txt")
 test = file.read()
-print(f"\n{HEADER}----- EJEMPLO DE CÓDIGO -----{RESET}\n\n{test}")
+print(f"\n{HEADER}---------- EJEMPLO DE CÓDIGO ----------{RESET}\n\n{test}")
 lexicoAux = AnalisisLexico(test)
 lexicoAux = lexicoAux.rstrip(lexicoAux[-1])
 analizador.compilador(lexicoAux)

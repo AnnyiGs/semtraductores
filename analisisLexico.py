@@ -49,8 +49,10 @@ def AnalisisLexico(test):
  
     cadena=""
 
-    print(f"\n{SUBHEADER}----- ANÁLISIS LÉXICO -----{RESET}\n")
-    print("TOKEN\t\tSÍMBOLO\t\tTIPO")
+    print(f"\n{SUBHEADER}-------- ANÁLISIS LÉXICO --------{RESET}")
+    encabezado = f"{'TOKEN':<12} {'SÍMBOLO':<16} {'TIPO':<5}"
+    print(encabezado)
+    print("-" * len(encabezado))
     for line in test:
         cont = cont + 1
         tokens = line.split(' ')
@@ -75,12 +77,12 @@ def AnalisisLexico(test):
                 elif(token=='='):
                     tipo="18"
                 cadena = cadena + token + " "
-                print(token, "\t\t", operadores[token], "\t\t",tipo)
+                print(f"{token:<12} {operadores[token]:<16} {tipo:<5}")
 
             elif token in identificador_key:
                 tipo="0"
                 cadena = cadena + token + " "
-                print(token, "\t\tidentificador","\t\t",tipo)
+                print(f"{token:<12} {'identificador':<16} {tipo:<5}")
 
             elif token in puntuacion_keys:
                 if(token==';'):
@@ -96,7 +98,7 @@ def AnalisisLexico(test):
                 elif(token=='}'):
                     tipo="17"
                 cadena = cadena + token + " "
-                print(token, "\t\t",puntuacion[token],"\t\t",tipo)
+                print(f"{token:<12} {puntuacion[token]:<16} {tipo:<5}")
 
             elif token in palabras_reservadas_keys:
                 if(token=='if'):
@@ -114,22 +116,22 @@ def AnalisisLexico(test):
                 elif(token=='print'):
                     tipo="0"
                 cadena = cadena + token + " "
-                print(token, "\t\t",palabras_reservadas[token],"\t\t",tipo)    
+                print(f"{token:<12} {palabras_reservadas[token]:<16} {tipo:<5}")
 
             elif ''.join(token).isdigit() == True:
-                tipo:"1"
+                tipo = "1"
                 cadena = cadena + token + " "
-                print(token, "\t\tnumEnt\t\t\t1")
+                print(f"{token:<12} {'numEnt':<16} {tipo:<5}")
 
             elif token.replace('.', '', 1).isdigit() == True:
-                tipo:"2"
+                tipo = "2"
                 cadena = cadena + token + " "
-                print(token, "\t\tnumReal\t\t2")
+                print(f"{token:<12} {'numReal':<16} {tipo:<5}")
 
             elif len(''.join(token))>=1:
                 if ''.join(token[0])>= 'a' and ''.join(token[0])<='z': 
                     cadena = cadena + token + " "
-                    print(token, "\t\tVariable\t\t")
+                    print(f"{token:<12} {'Variable':<16} {'':<5}")
 
             elif (token==' ' or '\n'):
                 pass

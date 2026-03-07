@@ -11,7 +11,7 @@ class Simbolo:
         self.ambito = ""
 
     def printSimbolo(self):
-        print(f"Identificador: {self.identificador}\t Tipo: {self.tipo}\t Tipo de Dato: {self.tipoDato}\t Ambito: {self.ambito}")
+        print(f"{self.identificador:<15} {self.tipo:<12} {self.tipoDato:<12} {self.ambito:<10}")
 
 class Funcion(Simbolo):
 
@@ -310,12 +310,15 @@ class Semantico:
                 return i
 
     def muestraSimbolos(self):
-        print(f"{HEADER}----- TABLA DE SÍMBOLOS -----{RESET}\n")
+        print(f"{HEADER}---------- TABLA DE SÍMBOLOS ----------{RESET}")
+        encabezado = f"{'IDENTIFICADOR':<15} {'TIPO':<12} {'TIPO DATO':<12} {'ÁMBITO':<10}"
+        print(encabezado)
+        print("-" * len(encabezado))
         for i in self.tablaSimbolos:
             i.printSimbolo()
 
     def muestraErrores(self):
-        print(f"\n\n{SUBHEADER}----- ANÁLISIS SEMÁNTICO -----{RESET}")
+        print(f"\n\n{SUBHEADER}---------- ANÁLISIS SEMÁNTICO ----------{RESET}")
         if len(self.listaErrores) == 0:
             print("No se detectó ningún error")
    

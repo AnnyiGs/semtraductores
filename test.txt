@@ -8,6 +8,6 @@ int resta ( int z ) {
 int main ( ) {
     int resul1 ;
     int resul2 ;
-    resul1 = suma ( 8 , 9 ) ;
+    resul1 = suma ( 2 , 5 ) ;
     resul2 = resta ( resul1 ) ;
 }

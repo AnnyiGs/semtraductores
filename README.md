@@ -178,7 +178,7 @@ Puedes modificar cualquiera de estos archivos o crear nuevos, mientras respetes 
 <div align="center">
 	<b>✨ OCHOA ORTEGA ANDREA J.</b><br>
 	<br>
-	<sub>Computación Tolerante a Fallas D06.</sub><br>
+	<sub>Seminario de solución de problemas de traductores de lenguaje.</sub><br>
 	<br>
 	<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"/>
 	<br>

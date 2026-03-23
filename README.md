@@ -182,5 +182,4 @@ Puedes modificar cualquiera de estos archivos o crear nuevos, mientras respetes 
 	<br>
 	<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"/>
 	<br>
-	<i>“Lo que esta bien hecho no se va a romper.”</i>
 </div>

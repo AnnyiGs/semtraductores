@@ -158,6 +158,14 @@ Además se generan/actualizan los archivos:
 
 ---
 
+## Archivo .asm
+
+El archivo [CodigoTraducido.asm](CodigoTraducido.asm) contiene el código ensamblador generado por el compilador. Este archivo es el resultado final del proceso de compilación y está diseñado para ser ensamblado y ejecutado utilizando MASM32. Representa la traducción del código fuente de entrada al lenguaje ensamblador, siguiendo las reglas y estructuras definidas por el compilador.
+
+![Código ASM](zimagenes/codigoASM.png)
+
+---
+
 ## Archivos de prueba
 
 - [test.txt](test.txt)
